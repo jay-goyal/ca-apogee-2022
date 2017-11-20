@@ -13,12 +13,12 @@
 
   </head>
   <body>
-    <header>
+    <header id="up" style="cursor: pointer">
       <label><span>APOGEE</span><span>18</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span></label>
       <label>CAMPUS AMBASSADOR PROGRAMME</label>
     </header>
     <span class="scroll-btn">
-      <a href="#"><span class="mouse"><span></span></span><span>scroll down for next section</span></a>
+      <a href="#"><span class="mouse"><span></span></span><span class="nosmall">scroll down for next section</span><span id="down" class="small">tap to go to next section</span></a>
       <button id="register">Register</button>
     </span>
     <div id="fullpage">
@@ -106,8 +106,7 @@
         </div>
       </div>
       <div class="section">
-          <div class="secdiv">
-            <div class="secdiv small" style="max-height: 400px; overflow-y: scroll; max-width: 100%">
+            <div class="secdiv" style="max-height: 400px; overflow-y: scroll; max-width: 100%">
               <h1>Contact Us</h1>
               <h2>Alanckrit Jain</h2>
               <p>+91 958 255 3659</p>
@@ -116,7 +115,6 @@
               <h2>e-mail</h2>
               <p>pcr@bits-apogee.org</p>
             </div>
-          </div>
         </div>
     </div>
     <div class="form">
@@ -171,7 +169,8 @@
   $(document).ready(function() {
     $('#fullpage').fullpage({
       paddingTop: '100px',
-      fitToSection: false
+      fitToSection: false,
+      normalScrollElements: '.secdiv.small'
     });
   });
   register.onclick = function() {
@@ -180,6 +179,12 @@
   cancel.onclick = function() {
     $('.form').css('top','100%');
     return false;
+  }
+  up.onclick = function() {
+    $.fn.fullpage.moveSectionUp();
+  }
+  down.onclick = function() {
+    $.fn.fullpage.moveSectionDown();
   }
   </script>
 </html>
