@@ -371,7 +371,9 @@ div.different {display: none;}
 }
 .err {
   color: #d33;
+  text-align: center;
 }
 .success {
   color: #4a4;
+  text-align: center;
 }
