@@ -13,9 +13,18 @@
 
   </head>
   <body>
-    <header id="up" style="cursor: pointer">
-      <label><span>APOGEE</span><span>18</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span></label>
-      <label>CAMPUS AMBASSADOR PROGRAMME</label>
+    <header style="cursor: pointer">
+      <label style="flex-direction: column; justify-content: center; ">
+        <p style="margin: 0; display: flex; align-items: center"><span>APOGEE</span><span>18</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span></p>
+        <p style="margin: 0; font-size: 1.05rem; color: #777">22–25 February 2018</p>
+      </label>
+      <div id="menu">
+        <label onclick="sp(1)">HOME</label>
+        <label onclick="sp(2)">PERKS</label>
+        <label onclick="sp(3)">RESPONSIBILITIES</label>
+        <label onclick="sp(4)">FAQs</label>
+        <label onclick="sp(5)">CONTACTS</label>
+      </div>
     </header>
     <span class="scroll-btn">
       <a href="#"><span class="mouse"><span></span></span><span class="nosmall">scroll down for next section</span><span id="down" class="small">tap to go to next section</span></a>
@@ -33,16 +42,16 @@
         <div class="slide">
           <div class="secdiv">
             <h1>COOL PERKS!</h1>
-            <p>Become a campus ambassador to stand a chance to <b>intern</b> for one of our awesome sponsors below, get <b>LoRs</b>, <b>Goodies</b>, <b>Passes</b> and much more! Click on the right button to know more about what you get!</p>
+            <p>Become a campus ambassador to stand a chance to work with for one of our awesome sponsors below, get <b>LoRs</b>, <b>Goodies</b>, <b>Passes</b> and much more! Click on the right button to know more about what you get!</p>
             <img src="img/logos.jpg" height="100">
           </div>
         </div>
-        <div class="slide">
+        <div class="slide nosmall">
           <div class="secr">
             <div style="background-image:url(img/building.svg)"></div>
             <div>
               <h1>INTERNSHIP OPPORTUNITIES</h1>
-              <p>Top 10 Campus ambassadors will get assured internships at PayTM, Actiwate, Half Baked Beans and also internship opportunities through the Summer in Startup programme of BITS Pilani.</p>
+              <p>Top 10 Campus ambassadors will get assured working opportunities with PayTM, Actiwate, Half Baked Beans and also internship opportunities through the Summer in Startup programme of BITS Pilani.</p>
             </div>
           </div>
           <div class="secl">
@@ -80,9 +89,9 @@
         <div class="slide">
           <div class="secdiv">
             <h2>SOCIAL MEDIA PLATFORMS</h2>
-            <p>A specially designed leaderboard, which will reflect your fulfilment of responsibilities as a CA, will the basis of awarding internships and other perks.</p>
+            <p>The campus ambassador has to maintain a strong social media presence on Facebook and Instagram to represent APOGEE and hence increase its popularity.</p>
             <h2>CAMPUS PUBLICITY</h2>
-            <p>Publicity of APOGEE through sending root and college mails along with visual presentation of the fest through posters, fliers etc</p>
+            <p>Publicity of APOGEE by sending route mails and messages on college WhatsApp groups along with visual presentation of the fest through posters, fliers etc.</p>
             <h2>WORKSHOPS</h2>
             <p>Organising technical events workshops in their college under the guidance of APOGEE, BITS Pilani.</p>
           </div>
@@ -111,7 +120,7 @@
               <h2>Alanckrit Jain</h2>
               <p>+91 958 255 3659</p>
               <h2>Ishan Joglekar</h2>
-              <p>+91 774 095 6093</p>
+              <p>+91 897 640 2763</p>
               <h2>e-mail</h2>
               <p>pcr@bits-apogee.org</p>
             </div>
@@ -120,8 +129,16 @@
     <div class="form">
       <form>
         <div class="r">
-          <div>Name</div>
-          <div><input type="text" name="name"></div>
+          <div>First name</div>
+          <div><input type="text" name="first"></div>
+        </div>
+        <div class="r">
+          <div>Last name</div>
+          <div><input type="text" name="last"></div>
+        </div>
+        <div class="r">
+          <div>Email</div>
+          <div><input type="text" name="email"></div>
         </div>
         <div class="r">
           <div>Address</div>
@@ -132,16 +149,20 @@
           <div><input type="text" name="college"></div>
         </div>
         <div class="r">
+          <div>College Strength</div>
+          <div><input type="number" name="strength"></div>
+        </div>
+        <div class="r">
+          <div>City</div>
+          <div><input type="text" name="city"></div>
+        </div>
+        <div class="r">
           <div>Year of Study</div>
           <div><input type="number" name="year"></div>
         </div>
         <div class="r">
-          <div>Degree</div>
+          <div>Degree and field of study</div>
           <div><input type="text" name="degree"></div>
-        </div>
-        <div class="r">
-          <div>Email</div>
-          <div><input type="text" name="email"></div>
         </div>
         <div class="r">
           <div>Mobile Number</div>
@@ -152,8 +173,12 @@
           <div><textarea name="what" rows="4"></textarea></div>
         </div>
         <div class="r">
+          <div>Briefly describe any previous publicity/marketing experience or a CA programme you've been a part of.</div>
+          <div><textarea name="experience" rows="4"></textarea></div>
+        </div>
+        <div class="r">
           <div>Does your college have a mailing list of all students?</div>
-          <div><select name="list"><option>yes</option><option>no</option></select></div>
+          <div><select name="list"><option>Yes</option><option>No</option></select></div>
         </div>
         <div class="r">
           <button id="submit" style="margin: 5px">Submit</button>
@@ -170,7 +195,7 @@
     $('#fullpage').fullpage({
       paddingTop: '100px',
       fitToSection: false,
-      normalScrollElements: '.secdiv.small'
+      normalScrollElements: '.secdiv.small, .form'
     });
   });
   register.onclick = function() {
@@ -180,11 +205,14 @@
     $('.form').css('top','100%');
     return false;
   }
-  up.onclick = function() {
-    $.fn.fullpage.moveSectionUp();
-  }
+  // up.onclick = function() {
+  //   $.fn.fullpage.moveSectionUp();
+  // }
   down.onclick = function() {
     $.fn.fullpage.moveSectionDown();
+  }
+  function sp(x) {
+    $.fn.fullpage.moveTo(x, 0);
   }
   </script>
 </html>
