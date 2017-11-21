@@ -369,7 +369,7 @@ div.different {display: none;}
   display: block !important;
   cursor: pointer;
 }
-.error {
+.err {
   color: #d33;
 }
 .success {

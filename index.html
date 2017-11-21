@@ -198,11 +198,11 @@
     </div>
   </body>
   <script type="text/javascript">
-  function parseError (err) {
+  function parseError(err) {
     msg.innerHTML = err;
     msg.className = "err";
   }
-  function parseSuccess (msg) {
+  function parseSuccess(message) {
     msg.innerHTML = msg;
     msg.className = "success";
   }
@@ -238,7 +238,7 @@
       processData: false,
       contentType: "application/x-www-form-urlencoded",
       success: function(result){
-        console.log(result);
+        parseSuccess("Details submitted succesfully");
       },
       error: function(er){
         parseError("Please Try Again");
