@@ -23,7 +23,7 @@
         <label onclick="sp(2)">PERKS</label>
         <label onclick="sp(3)">RESPONSIBILITIES</label>
         <label onclick="sp(4)">FAQs</label>
-        <label onclick="sp(5)">CONTACTS</label>
+        <label onclick="sp(5)">CONTACT US</label>
       </div>
     </header>
     <span class="scroll-btn">
@@ -46,15 +46,17 @@
             <img src="img/logos.jpg" height="100">
           </div>
         </div>
-        <div class="slide nosmall">
-          <div class="secr">
+        <div class="slide">
+          <div class="secl">
             <div style="background-image:url(img/building.svg)"></div>
             <div>
               <h1>INTERNSHIP OPPORTUNITIES</h1>
               <p>Top 10 Campus ambassadors will get assured working opportunities with PayTM, Actiwate, Half Baked Beans and also internship opportunities through the Summer in Startup programme of BITS Pilani.</p>
             </div>
           </div>
-          <div class="secl">
+        </div>
+        <div class="slide">
+          <div class="secr">
             <div style="background-image:url(img/diploma.svg)"></div>
             <div>
               <h1>LORs &amp; CERTIFICATES</h1>
@@ -70,6 +72,8 @@
               <p>APOGEE and sponsor merchandise will be given to ALL ambassadors.</p>
             </div>
           </div>
+        </div>
+        <div class="slide nosmall">
           <div class="secl">
             <div style="background-image:url(img/cash.svg)"></div>
             <div>
@@ -87,7 +91,7 @@
           </div>
         </div>
         <div class="slide">
-          <div class="secdiv">
+          <div class="secdiv underline">
             <h2>SOCIAL MEDIA PLATFORMS</h2>
             <p>The campus ambassador has to maintain a strong social media presence on Facebook and Instagram to represent APOGEE and hence increase its popularity.</p>
             <h2>CAMPUS PUBLICITY</h2>
@@ -115,7 +119,7 @@
         </div>
       </div>
       <div class="section">
-            <div class="secdiv" style="max-height: 400px; overflow-y: scroll; max-width: 100%">
+            <div class="secdiv" style="max-height: 400px; max-width: 100%">
               <h1>Contact Us</h1>
               <h2>Alanckrit Jain</h2>
               <p>+91 958 255 3659</p>
@@ -181,6 +185,9 @@
           <div><select name="list"><option>Yes</option><option>No</option></select></div>
         </div>
         <div class="r">
+          <p id="msg"></p>
+        </div>
+        <div class="r">
           <button id="submit" style="margin: 5px">Submit</button>
           <button id="cancel" style="margin: 5px">Cancel</button>
         </div>
@@ -191,6 +198,14 @@
     </div>
   </body>
   <script type="text/javascript">
+  function parseError (err) {
+    msg.innerHTML = err;
+    msg.className = "err";
+  }
+  function parseSuccess (msg) {
+    msg.innerHTML = msg;
+    msg.className = "success";
+  }
   $(document).ready(function() {
     $('#fullpage').fullpage({
       paddingTop: '100px',
@@ -212,7 +227,24 @@
     $.fn.fullpage.moveSectionDown();
   }
   function sp(x) {
+    $('.form').css('top','100%');
     $.fn.fullpage.moveTo(x, 0);
+  }
+  submit.onclick = function() {
+    $.ajax({
+      url: "https://bits-apogee.org/2018/portal/ca/status/",
+      method: "POST",
+      data: $('form').serialize(),
+      processData: false,
+      contentType: false,
+      success: function(result){
+        console.log(result);
+      },
+      error: function(er){
+        parseError("Please Try Again");
+      }
+    });
+    return false;
   }
   </script>
 </html>

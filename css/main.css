@@ -80,7 +80,7 @@ header label:nth-child(n+2) {
   margin: 0;
   position: relative;
 }
-.secdiv h1::after, .secdiv h2::after, .secr h1::after, .secl h1::after  {
+.secdiv h1::after, .secdiv.underline h2::after, .secr h1::after, .secl h1::after  {
   display: block;
   position: absolute;
   bottom: -6px;
@@ -160,13 +160,16 @@ header label:nth-child(n+2) {
   flex-direction: row-reverse;
   margin: 10px 0;
 }
-.secdiv h2::after {
+.secdiv.underline h2 {
+  position: relative;
+}
+.secdiv.underline h2::after {
   bottom: -6px;
   width: 30%;
 }
 @media all and (max-width: 600px){
   .secr div:nth-child(1), .secl div:nth-child(1) {min-height: 100px}
-  .secr p, .secl p {display: none}
+  .secr p, .secl p {text-align: center}
   .secr, .secl {flex-direction: column;}
   .secr h1, .secl h1 {text-align: center; font-size: 1.5rem; margin: 10px 0;}
   .secr h1::after, .secl h1::after {display: none}
@@ -316,14 +319,14 @@ input:focus, textarea:focus {
   border-bottom-color: #777;
 }
 form {
- // height: 500px;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow-y: scroll;
   padding: 20px 0;
   width: 100%;
+  margin-top: 50px;
 }
 
-p.small {display: none;}
+p.small, span.small {display: none;}
 
 div.different {display: none;}
 
@@ -364,4 +367,11 @@ div.different {display: none;}
   font-weight: normal;
   margin: -5px 10px;
   display: block !important;
+  cursor: pointer;
+}
+.error {
+  color: #d33;
+}
+.success {
+  color: #4a4;
 }
