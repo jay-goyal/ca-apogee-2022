@@ -236,7 +236,7 @@
       method: "POST",
       data: $('form').serialize(),
       processData: false,
-      contentType: false,
+      contentType: "multipart/form-data",
       success: function(result){
         console.log(result);
       },
