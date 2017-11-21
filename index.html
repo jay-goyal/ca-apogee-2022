@@ -238,7 +238,10 @@
       processData: false,
       contentType: "application/x-www-form-urlencoded",
       success: function(result){
-        parseSuccess("Details submitted succesfully");
+        if(result.staus==0)
+          parseError(result.message);
+        else 
+          parseSuccess(result.message);
       },
       error: function(er){
         parseError("Please Try Again");
