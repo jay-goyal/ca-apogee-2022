@@ -85,6 +85,9 @@
                         // Valid User
                         leaderboard();
                     }
+                },
+                error: function(e) {
+                    console.log(e.responseJSON);
                 }
             });
         }
