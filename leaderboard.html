@@ -101,13 +101,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="scrollArea" class="clusterize-scroll">
+                    <div id="scrollArea" class="clusterize-scroll" style="height: 200px">
                         <table>
-                            <tr class="clusterize-no-data">
-                                <td></td>
-                                <td>Loading data...</td>
-                                <td></td>
-                            </tr>
+                            <tbody id="contentArea">
+                                <tr class="clusterize-no-data">
+                                    <td></td>
+                                    <td>Loading data...</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -120,7 +122,7 @@
         </ul>
     </section>
     <script>
-        var clusterize = new clusterize({
+        var clusterize = new Clusterize({
             rows: [],
             scrollId: "scrollArea",
             contentId: "contentArea"
@@ -132,7 +134,6 @@
             document.querySelector("ul").style.top = "-" + (num-1)*100 + "%";
         }
         $(document).ready(function() {
-            var 
             $.ajax({
                 url: "https://bits-apogee.org/2018/portal/ca/leaderboard",
                 method: "GET",
