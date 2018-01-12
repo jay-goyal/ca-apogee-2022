@@ -57,6 +57,7 @@
             margin: 0;
             padding: 10px 10px;
             min-width: 100px;
+            width: 33.33%;
         }
         td {
             padding: 5px 10px;
@@ -92,7 +93,7 @@
             <li class="s1">
                 <h1>Leaderboard</h1>
                 <div class="clusterize">
-                    <table>
+                    <table style="width: 100%">
                         <tbody>
                             <tr>
                                 <th>Name</th>
@@ -149,9 +150,9 @@
                     else {
                         // Valid User
                         var ldb = data.data;
-                         for (var i = 0; i < 10; i++) {
+                         for (var i = 0; i < ldb.length; i++) {
                             var row = ldb[i];
-                            clusterize.append("<tr><td>"+row.name+"</td><td>"+row.college+"</td><td>"+row.score+"</td></tr>");
+                            clusterize.append(["<tr><td>"+row.name+"</td><td>"+row.college+"</td><td>"+row.score+"</td></tr>"]);
                         }
                     }
                 },
