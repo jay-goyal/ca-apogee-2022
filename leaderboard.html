@@ -93,16 +93,7 @@
             <li class="s1">
                 <h1>Leaderboard</h1>
                 <div class="clusterize">
-                    <table style="width: 100%">
-                        <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <th>College</th>
-                                <th>Points</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div id="scrollArea" class="clusterize-scroll" style="height: 200px">
+                    <div id="scrollArea" class="clusterize-scroll" style="height: 300px">
                         <table>
                             <tbody id="contentArea">
                                 <tr class="clusterize-no-data">
@@ -124,7 +115,7 @@
     </section>
     <script>
         var clusterize = new Clusterize({
-            rows: [],
+            rows: ["<tr><th>Name</th><th>College</th><th>Points</th></tr>"],
             scrollId: "scrollArea",
             contentId: "contentArea"
         });
