@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Contact Developers | APOGEE CA</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+            font-family: Coves;
+        }
+        section {
+            height: calc(100% - 100px);
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        ul {
+            padding: 0;
+        }
+        li {
+            text-align: center
+        }
+        li.name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        li.email {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="cursor: pointer" onclick="home()">
+        <label style="flex-direction: column; justify-content: center; ">
+          <p style="margin: 0; display: flex; align-items: center"><span>APOGEE</span><span>18</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span></p>
+          <p style="margin: 0; font-size: 1.05rem; color: #777">22–25 February 2018</p>
+        </label>
+        <div id="menu">
+          <label onclick="home()">HOME</label>
+        </div>
+    </header>
+    <section class="lgn">
+        <h1>Developers</h1>
+        <p>
+            <ul style="list-style-type: none">
+                <li class="name">Chinmay Pandhare</li>
+                <li class="email">f2016153@pilani.bits-pilani.ac.in</li>
+                <li class="name">Tushar Goel</li>
+                <li class="email">f2016023@pilani.bits-pilani.ac.in</li>
+            </ul>
+        </p>
+    </section>
+    <script>
+        function home() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

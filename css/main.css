@@ -75,12 +75,12 @@ header label:nth-child(n+2) {
   font-family: 'Coves';
   text-align: center;
 }
-.secdiv h1, .secr h1, .secl h1 {
+.secdiv h1, .secr h1, .secl h1, .lgn h1 {
   font-size: 3.5rem;
   margin: 0;
   position: relative;
 }
-.secdiv h1::after, .secdiv.underline h2::after, .secr h1::after, .secl h1::after  {
+.secdiv h1::after, .secdiv.underline h2::after, .secr h1::after, .secl h1::after, .lgn h1::after  {
   display: block;
   position: absolute;
   bottom: -6px;
