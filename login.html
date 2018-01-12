@@ -59,7 +59,7 @@
     </header>
     <section class="lgn">
         <h1>Login</h1>
-        <p>Once you are selected as a campus ambassador, we will send you an email containing your username and password. Use that to log in and check out the leaderboard and other details.</p>
+        <p>Congratulations on being selected as a Campus Ambassador for APOGEE 2018. Please use the login ID and password emailed to you to keep up with the leaderboard and view all relevant details..</p>
         <form id="login">
             <input type="text" name="username" placeholder="username">
             <input type="password" name="password" placeholder="password">
@@ -68,7 +68,7 @@
         </form>
     </section>
     <script>
-        window.onload = function() {
+        $(document).ready(function(){
             $.ajax({
                 url: "https://bits-apogee.org/2018/portal/ca/check",
                 method: "GET",
@@ -90,7 +90,7 @@
                     console.log(e.responseJSON);
                 }
             });
-        }
+        });
         function home() {
             window.location.href = "index.html";
         }
