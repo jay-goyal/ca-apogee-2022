@@ -185,6 +185,8 @@ header label:nth-child(n+2) {
   }
   #menu {
     max-width: 100vw !important;
+    justify-content: center !important;
+    text-align: center;
   }
   #menu label {
     margin: 5px 10px;
