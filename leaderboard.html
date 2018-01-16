@@ -96,6 +96,7 @@
           <label onclick="switchp(3)">RESPONSIBILITIES</label>
           <label onclick="switchp(4)">POINTS SCHEME</label>
           <label onclick="home()">HOME</label>
+          <label onclick="logout()">LOG OUT</label>
         </div>
     </header>
     <section class="lgn">
@@ -392,6 +393,30 @@
                 }
             });
         });
+        function logout() {
+            $.ajax({
+                url: "https://bits-apogee.org/2018/portal/ca/logout",
+                method: "GET",
+                crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(data) {
+                    // console.log(data);
+                    if(data.status == 0) {
+                        // Invalid User
+                        window.location.href = "login.html";
+                    }
+                    else {
+                        // Valid User
+                        window.location.href= "login.html";
+                    }
+                },
+                error: function(e) {
+                    console.log(e.responseJSON);
+                }
+            });
+        }
     </script>
 </body>
 </html>
