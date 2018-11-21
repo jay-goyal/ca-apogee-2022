@@ -91,8 +91,20 @@ header label:nth-child(n+2) {
   width: 55%;
   background: #F33562;
 }
+.start {
+  width: 600px;
+  max-width: 90%;
+  font-family: 'Coves';
+  text-align: center;
+}
+.start h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  position: relative;
+  color: #F33562;
+}
 .secdiv p, .secr p, .secl p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: "Raleway";
 }
 @media all and (max-width: 900px) {
