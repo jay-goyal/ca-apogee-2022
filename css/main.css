@@ -206,7 +206,14 @@ header label:nth-child(n+2) {
 }
 
 @media all and (max-width: 450px){
-  .secdiv h1 {text-align: center; font-size: 2rem; margin: 10px 0;}
+  .secdiv h1 {
+    text-align: center; 
+    font-size: 2rem; 
+    margin: 10px 0;
+  }
+  .start h1 {
+    font-size: 1.6rem;
+  }  
   .secdiv h2 {
     font-size: 1.2rem;
   }
