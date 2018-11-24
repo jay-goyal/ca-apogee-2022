@@ -145,7 +145,7 @@
             </div>
         </div>
     </div>
-    <div class="form">
+    <div class="form" id="regform">
       <form>
         <div class="r">
           <div>First name</div>
@@ -165,7 +165,10 @@
         </div>
         <div class="r">
           <div>College</div>
-          <div><input type="text" name="college"></div>
+          <!-- <div><input type="text" name="college"></div> -->
+          <select name="" id="college-select">
+            <option value="" selected disabled hidden>Choose your college</option>
+          </select>
         </div>
         <div class="r">
           <div>College Strength</div>
@@ -268,4 +271,5 @@
     window.location.href = "login.html";
   }
   </script>
+  <script src="js/back.js"></script>
 </html>
