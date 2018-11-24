@@ -148,65 +148,67 @@
     <div class="form" id="regform">
       <form>
         <div class="r">
-          <div>First name</div>
-          <div><input type="text" name="first"></div>
+          <div>first name</div>
+          <div><input type="text" name="first" id="regform-first" required></div>
         </div>
         <div class="r">
           <div>Last name</div>
-          <div><input type="text" name="last"></div>
+          <div><input type="text" name="last" id="regform-last" required></div>
         </div>
         <div class="r">
           <div>Email</div>
-          <div><input type="text" name="email"></div>
+          <div><input type="text" name="email" id="regform-email" required></div>
         </div>
         <div class="r">
           <div>Address</div>
-          <div><textarea name="address" rows="3"></textarea></div>
+          <div><textarea name="address" rows="3" id="regform-address"></textarea></div>
         </div>
         <div class="r">
           <div>College</div>
           <!-- <div><input type="text" name="college"></div> -->
-          <select name="" id="college-select">
-            <option value="" selected disabled hidden>Choose your college</option>
-          </select>
+          <div>
+            <select name="" id="regform-collegeselect">
+              <option value="" selected disabled hidden>Choose your college</option>
+            </select>
+        </div>
         </div>
         <div class="r">
           <div>College Strength</div>
-          <div><input type="number" name="strength"></div>
+          <div><input type="number" name="strength" id="regform-collegestrength"></div>
         </div>
         <div class="r">
           <div>City</div>
-          <div><input type="text" name="city"></div>
+          <div><input type="text" name="city" id="regform-city"></div>
         </div>
         <div class="r">
           <div>Year of Study</div>
-          <div><input type="number" name="year"></div>
+          <div><input type="number" name="year" id="regform-yearofstudy"></div>
         </div>
         <div class="r">
           <div>Degree and field of study</div>
-          <div><input type="text" name="degree"></div>
+          <div><input type="text" name="degree" id="regform-fieldofstudy"></div>
         </div>
         <div class="r">
           <div>Mobile Number</div>
-          <div><input type="number" name="mobile"></div>
+          <div><input type="number" name="mobile" id="regform-mobile"></div>
         </div>
         <div class="r">
           <div>What makes you a good candidate for campus ambassador?</div>
-          <div><textarea name="what" rows="4"></textarea></div>
+          <div><textarea name="what" rows="4" id="regform-goodcand"></textarea></div>
         </div>
         <div class="r">
           <div>Briefly describe any previous publicity/marketing experience or a CA programme you've been a part of.</div>
-          <div><textarea name="experience" rows="4"></textarea></div>
+          <div><textarea name="experience" rows="4" id="regform-pastexp"></textarea></div>
         </div>
         <div class="r">
           <div>Does your college have a mailing list of all students?</div>
-          <div><select name="list"><option>Yes</option><option>No</option></select></div>
+          <div><select name="list" id="regform-boolmailinglist"><option>Yes</option><option>No</option></select></div>
         </div>
         <div class="r">
           <p id="msg"></p>
         </div>
         <div class="r">
-          <button id="submit" style="margin: 5px">Submit</button>
+          <button id="submit" class="regform-submit" style="margin: 5px">Submit</button>
           <button id="cancel" style="margin: 5px">Cancel</button>
         </div>
       </form>
@@ -248,25 +250,25 @@
     $('.form').css('top','100%');
     $.fn.fullpage.moveTo(x, 0);
   }
-  submit.onclick = function() {
-    $.ajax({
-      url: "https://bits-apogee.org/2018/portal/ca/status/",
-      method: "POST",
-      data: $('form').serialize(),
-      processData: false,
-      contentType: "application/x-www-form-urlencoded",
-      success: function(result){
-        if(result.staus==0)
-          parseError(result.message);
-        else 
-          parseSuccess(result.message);
-      },
-      error: function(er){
-        parseError("Please Try Again");
-      }
-    });
-    return false;
-  }
+  // submit.onclick = function() {
+  //   $.ajax({
+  //     url: "https://bits-apogee.org/2018/portal/ca/status/",
+  //     method: "POST",
+  //     data: $('form').serialize(),
+  //     processData: false,
+  //     contentType: "application/x-www-form-urlencoded",
+  //     success: function(result){
+  //       if(result.staus==0)
+  //         parseError(result.message);
+  //       else 
+  //         parseSuccess(result.message);
+  //     },
+  //     error: function(er){
+  //       parseError("Please Try Again");
+  //     }
+  //   });
+  //   return false;
+  // }
   login.onclick = function () {
     window.location.href = "login.html";
   }
