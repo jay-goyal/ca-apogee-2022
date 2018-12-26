@@ -288,6 +288,7 @@ button, .scroll-btn button {
   border: 1px solid #111;
   color: #fff;
   cursor: pointer;
+  white-space: nowrap;
 }
 button:hover, .scroll-btn button:hover {
   border: 1px solid #fff;
