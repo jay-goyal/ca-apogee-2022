@@ -1,4 +1,4 @@
-var baseUrl = 'http://test.bits-apogee.org/2019/collegeambassador';
+var baseUrl = 'https://bits-apogee.org/2019/collegeambassador';
 
 var getCollegeUrl = baseUrl + '/college';
 var registerUrl = baseUrl + '/register'
@@ -24,31 +24,31 @@ function populateCollegeField() {
 
 function onSubmitRegister(){
     var first = document.getElementById('regform-first').value;
-    var last = document.getElementById('regform-last').value;
+    // var last = document.getElementById('regform-last').value;
     var email = document.getElementById('regform-email').value;
-    var address = document.getElementById('regform-address').value;
+    // var address = document.getElementById('regform-address').value;
     var college = document.getElementById('regform-collegeselect').value;
-    var collegeStrength = document.getElementById('regform-collegestrength').value;
+    //var collegeStrength = document.getElementById('regform-collegestrength').value;
     var city = document.getElementById('regform-city').value;
     var yearOfStudy = document.getElementById('regform-yearofstudy').value;
-    var fieldOfStudy = document.getElementById('regform-fieldofstudy').value;
+    //var fieldOfStudy = document.getElementById('regform-fieldofstudy').value;
     var mobile = document.getElementById('regform-mobile').value;
-    var goodCand = document.getElementById('regform-goodcand').value;
-    var pastExp = document.getElementById('regform-pastexp').value;
-    var hasMailingList = document.getElementById('regform-boolmailinglist').value === "Yes" ? true : false;
+    //var goodCand = document.getElementById('regform-goodcand').value;
+    //var pastExp = document.getElementById('regform-pastexp').value;
+    //var hasMailingList = document.getElementById('regform-boolmailinglist').value === "Yes" ? true : false;
 
     var requestObject = {
         email: email,
-        first: first,
-        last: last,
-        address: address,
-        strength: collegeStrength,
+        name: first,
+        // last: last,
+        // address: address,
+        //strength: collegeStrength,
         year: yearOfStudy,
-        degree: fieldOfStudy,
+        //degree: fieldOfStudy,
         mobile: mobile,
-        what: goodCand,
-        experience: pastExp,
-        list: hasMailingList,
+        //what: goodCand,
+        //experience: pastExp,
+        //list: hasMailingList,
         city: city,
         college: college,
     };
@@ -56,15 +56,22 @@ function onSubmitRegister(){
     console.log(JSON.stringify(requestObject));
 
     fetch(registerUrl, {
-        method: "POST",
+        method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
+        redirect: "follow",
         body: JSON.stringify(requestObject)
     }).then(res => res.json())
     .then(data => {
         console.log(data);
-        document.getElementById('msg').innerHTML = data.message;
+        const {message} = data;
+        if(message){
+            document.getElementById('msg').innerHTML = message;
+        }
+        else{
+            document.getElementById('msg').innerHTML = "Unknown error occured, contact administrator";
+        }
     })
     .catch(console.log);
 }

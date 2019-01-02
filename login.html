@@ -99,10 +99,11 @@
             leaderboard();
         }
         login.onsubmit = function (e) {
+            const username= document.getElementById('login-username').value;
+            const password= document.getElementById('login-password').value;
             e.preventDefault();
             var postBody = {
-                username: document.getElementById('login-username').value,
-                password: document.getElementById('login-password').value,
+                username, password
             };
             console.log(postBody);
             fetch(baseUrl + '/login', {
@@ -115,6 +116,9 @@
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.status !== 1) { return ;}
+                localStorage.setItem('caUsername', username);
+                localStorage.setItem('caPassword', password);
                 leaderboard();
             })
             .catch(console.log);
