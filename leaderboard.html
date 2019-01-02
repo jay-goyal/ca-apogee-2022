@@ -356,6 +356,7 @@
         </ul>
     </section>
     <script>
+        var baseUrl = 'http://test.bits-apogee.org/2019/collegeambassador';
         var clusterize = new Clusterize({
             rows: ["<tr><th>Name</th><th>College</th><th>Points</th></tr>"],
             scrollId: "scrollArea",
@@ -367,57 +368,43 @@
         function switchp(num) {
             document.querySelector("ul").style.top = "-" + (num-1)*100 + "%";
         }
+        function redirect(loc) {
+            window.location.href = loc;
+        }
+        function clearCredentials() {
+            localStorage.removeItem('caUsername');
+            localStorage.removeItem('caPassword');
+        }
         $(document).ready(function() {
-            $.ajax({
-                url: "https://bits-apogee.org/2018/portal/ca/leaderboard",
-                method: "GET",
-                crossDomain: true,
-                xhrFields: {
-                    withCredentials: true
+            const username = localStorage.getItem('caUsername');
+            const password = localStorage.getItem('caPassword');
+            if(!username || !password) {
+                clearCredentials()
+                redirect('login.html');
+            }
+            const authdata = (username + ":" + password).toString('base64');
+            const authheader = "Basic " + authdata;
+            console.log(authheader);
+            fetch(baseUrl + '/leaderboard', {
+                headers: {
+                    "Authorization": authheader,
                 },
-                success: function(data) {
-                    // console.log(data);
-                    if(data.status == 0) {
-                        // Invalid User
-                        window.location.href = "login.html";
-                    }
-                    else {
-                        // Valid User
-                        var ldb = data.data;
-                         for (var i = 0; i < ldb.length; i++) {
-                            var row = ldb[i];
-                            clusterize.append(["<tr><td>"+row.name+"</td><td>"+row.college+"</td><td>"+row.score+"</td></tr>"]);
-                        }
-                    }
-                },
-                error: function(e) {
-                    console.log(e.responseJSON);
+            }).then(res => {
+                if(res.status !== 200) {
+                    clearCredentials();
+                    redirect('login.html');
                 }
-            });
+                console.log(res);
+                return res.json()
+            }).then(data => {
+                console.log(data);
+            }).catch(console.log);
         });
         function logout() {
-            $.ajax({
-                url: "https://bits-apogee.org/2018/portal/ca/logout",
-                method: "GET",
-                crossDomain: true,
-                xhrFields: {
-                    withCredentials: true
-                },
-                success: function(data) {
-                    // console.log(data);
-                    if(data.status == 0) {
-                        // Invalid User
-                        window.location.href = "login.html";
-                    }
-                    else {
-                        // Valid User
-                        window.location.href= "login.html";
-                    }
-                },
-                error: function(e) {
-                    console.log(e.responseJSON);
-                }
-            });
+            fetch(baseUrl + '/logout')
+            .then(res => res.text())
+            .then(console.log)
+            .catch(console.log);
         }
     </script>
 </body>

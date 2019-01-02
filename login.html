@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             position: relative;
             font-family: Coves;
         }
+
         section {
             height: calc(100% - 100px);
             margin-top: 100px;
@@ -24,6 +26,7 @@
             align-items: center;
             z-index: 1;
         }
+
         form {
             width: 100%;
             max-width: 275px;
@@ -31,10 +34,12 @@
             flex-direction: column;
             margin-top: 0px;
         }
-        form > * {
+
+        form>* {
             margin: 5px 0;
             font-size: 25px;
         }
+
         .lgn p {
             font-size: 1.5rem;
             margin: 30px 0 0 0;
@@ -42,57 +47,42 @@
             width: 90%;
             max-width: 550px;
         }
+
         #msg {
             font-size: 1.3rem;
         }
     </style>
 </head>
+
 <body>
     <header style="cursor: pointer" onclick="home()">
         <label style="flex-direction: column; justify-content: center; ">
-          <p style="margin: 0; display: flex; align-items: center"><span>APOGEE</span><span>19</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span></p>
-          <p style="margin: 0; font-size: 1.05rem; color: #777">
-            <!-- 22–25 February 2018 -->
-        </p>
+            <p style="margin: 0; display: flex; align-items: center">
+                <span>APOGEE</span>
+                <span>19</span>
+                <span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span>
+            </p>
+            <p style="margin: 0; font-size: 1.05rem; color: #777">
+                <!-- 22–25 February 2018 -->
+            </p>
         </label>
         <div id="menu">
-          <label onclick="home()">HOME</label>
+            <label onclick="home()">HOME</label>
         </div>
     </header>
     <section class="lgn">
         <h1>Login</h1>
-        <p>Congratulations on being selected as a Campus Ambassador for APOGEE 2019. Please use the login ID and password emailed to you to keep up with the leaderboard and view all relevant details..</p>
+        <p>Congratulations on being selected as a Campus Ambassador for APOGEE 2019. Please use the login ID and password emailed
+            to you to keep up with the leaderboard and view all relevant details..</p>
         <form id="login">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
+            <input type="text" name="username" placeholder="username" id="login-username">
+            <input type="password" name="password" placeholder="password" id="login-password">
             <button type="submit">Login</button>
             <div id="msg"></div>
         </form>
     </section>
     <script>
-        $(document).ready(function(){
-            $.ajax({
-                url: "https://bits-apogee.org/2018/portal/ca/check",
-                method: "GET",
-                crossDomain: true,
-                xhrFields: {
-                    withCredentials: true
-                },
-                success: function(data) {
-                    console.log(data);
-                    if(data.status == 0) {
-                        // Invalid User
-                    }
-                    else {
-                        // Valid User
-                        leaderboard();
-                    }
-                },
-                error: function(e) {
-                    console.log(e.responseJSON);
-                }
-            });
-        });
+        var baseUrl = 'http://test.bits-apogee.org/2019/collegeambassador';
         function home() {
             window.location.href = "index.html";
         }
@@ -108,27 +98,32 @@
             msg.className = "success";
             leaderboard();
         }
-        login.onsubmit = function() {
-            $.ajax({
-                url: "https://bits-apogee.org/2018/portal/ca/login/",
+        login.onsubmit = function (e) {
+            const username= document.getElementById('login-username').value;
+            const password= document.getElementById('login-password').value;
+            e.preventDefault();
+            var postBody = {
+                username, password
+            };
+            console.log(postBody);
+            fetch(baseUrl + '/login', {
                 method: "POST",
-                data: $('form').serialize(),
-                processData: false,
-                contentType: "application/x-www-form-urlencoded",
-                success: function(result){
-                    console.log(result);
-                    if(result.status!=1)
-                        parseError(result.message);
-                    else 
-                        parseSuccess(result.message);
-                    },
-                error: function(er){
-                    console.log(er.statusText);
-                    parseError("Error: This is most likely a server error. Please try again and contact the developers if the problem persists.");
-                }
-            });
-            return false;
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(postBody)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.status !== 1) { return ;}
+                localStorage.setItem('caUsername', username);
+                localStorage.setItem('caPassword', password);
+                leaderboard();
+            })
+            .catch(console.log);
         }
     </script>
 </body>
+
 </html>
