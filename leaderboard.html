@@ -109,11 +109,12 @@
                     <div id="scrollArea" class="clusterize-scroll" style="max-height: 50vh">
                         <table>
                             <tbody id="contentArea">
-                                <tr class="clusterize-no-data">
+                                <!-- <tr class="clusterize-no-data">
                                     <td></td>
                                     <td>Loading data...</td>
                                     <td></td>
-                                </tr>
+                                </tr> -->
+                                <th></th>
                             </tbody>
                         </table>
                     </div>
@@ -307,7 +308,7 @@
                     </ol>
                 </div>
             </li>
-            <li class="s4">
+            <li class="s4">/con
                 <h1>Points Scheme</h1>
                 <div style="text-align:justify; width: 100%; max-width: 600px">
                 <ol class="par">
@@ -356,12 +357,8 @@
         </ul>
     </section>
     <script>
-        var baseUrl = 'http://test.bits-apogee.org/2019/collegeambassador';
-        var clusterize = new Clusterize({
-            rows: ["<tr><th>Name</th><th>College</th><th>Points</th></tr>"],
-            scrollId: "scrollArea",
-            contentId: "contentArea"
-        });
+        var baseUrl = 'https://bits-apogee.org/2019/collegeambassador';
+        
         function home() {
             window.location.href = "index.html";
         }
@@ -397,6 +394,14 @@
                 console.log(res);
                 return res.json()
             }).then(data => {
+                const { data } = data;
+                const innerHTML = data.map(({name, college, score}) => 
+                    `<tr><td>${name}</td><td>${college}</td><td>${score}</td></tr>`);
+                var clusterize = new Clusterize({
+                    rows: ["<tr><th>Name</th><th>College</th><th>Points</th></tr>", ...innerHTML],
+                    scrollId: "scrollArea",
+                    contentId: "contentArea"
+                });       
                 console.log(data);
             }).catch(console.log);
         });

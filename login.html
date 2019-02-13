@@ -115,13 +115,13 @@
             })
             .then(res => res.json())
             .then(data => {
-               // console.log(data);
+                console.log(data);
                 if(data.status !== 1) { return ;}
                 localStorage.setItem('caUsername', username);
                 localStorage.setItem('caPassword', password);
                 leaderboard();
             })
-            .catch(e => console.log(e));
+            .catch(console.log);
         }
     </script>
 </body>
