@@ -415,3 +415,8 @@ div.different {display: none;}
   color: #4a4;
   text-align: center;
 }
+
+button:disabled, button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

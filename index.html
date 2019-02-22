@@ -194,7 +194,8 @@
           <div>College</div>
           <!-- <div><input type="text" name="college"></div> -->
           <div>
-            <select name="" id="regform-collegeselect">
+            <span id="loading-colleges">Loading colleges...</span>
+            <select name="" id="regform-collegeselect" disabled>
               <option value="" selected disabled hidden>Choose your college</option>
             </select>
             <br>
@@ -237,7 +238,7 @@
           <p id="msg"></p>
         </div>
         <div class="r">
-          <button id="submit" class="regform-submit" style="margin: 5px">Submit</button>
+          <button id="submit" class="regform-submit" style="margin: 5px">Register</button>
           <button id="cancel" style="margin: 5px">Cancel</button>
         </div>
       </form>
