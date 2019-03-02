@@ -98,7 +98,6 @@
           <label onclick="switchp(3)">RESPONSIBILITIES</label>
           <label onclick="switchp(4)">POINTS SCHEME</label>
           <label onclick="home()">HOME</label>
-          <label onclick="logout()">LOG OUT</label>
         </div>
     </header>
     <section class="lgn">
@@ -373,28 +372,11 @@
             localStorage.removeItem('caPassword');
         }
         $(document).ready(function() {
-            const username = localStorage.getItem('caUsername');
-            const password = localStorage.getItem('caPassword');
-            if(!username || !password) {
-                clearCredentials()
-                redirect('login.html');
-            }
-            const authdata = (username + ":" + password).toString('base64');
-            const authheader = "Basic " + authdata;
-            console.log(authheader);
-            fetch(baseUrl + '/leaderboard', {
-                headers: {
-                    "Authorization": authheader,
-                },
-            }).then(res => {
-                if(res.status !== 200) {
-                    clearCredentials();
-                    redirect('login.html');
-                }
-                console.log(res);
-                return res.json()
-            }).then(data => {
-                const { data } = data;
+            fetch(baseUrl + '/leaderboard')
+            .then(res => res.json())
+            .then(response => {
+                console.log(response);
+                const { data } = response;
                 const innerHTML = data.map(({name, college, score}) => 
                     `<tr><td>${name}</td><td>${college}</td><td>${score}</td></tr>`);
                 var clusterize = new Clusterize({
@@ -402,15 +384,8 @@
                     scrollId: "scrollArea",
                     contentId: "contentArea"
                 });       
-                console.log(data);
             }).catch(console.log);
         });
-        function logout() {
-            fetch(baseUrl + '/logout')
-            .then(res => res.text())
-            .then(console.log)
-            .catch(console.log);
-        }
     </script>
 </body>
 </html>
