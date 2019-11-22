@@ -1,5 +1,5 @@
-var baseUrl = 'https://bits-apogee.org/2019/collegeambassador';
-var baseUrl1 = 'https://www.bits-apogee.org/2019/collegeambassador';
+var baseUrl = 'https://bits-apogee.org/collegeambassador';
+var baseUrl1 = 'https://www.bits-apogee.org/collegeambassador';
 
 var getCollegeUrl = baseUrl + '/college';
 var getCollegeUrl1 = baseUrl1 + '/college';
