@@ -348,8 +348,15 @@ input, textarea {
   font-size: 1.2rem;
   cursor: pointer;
 }
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   border-bottom-color: #777;
+}
+select {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100% !important;
+  border-bottom: 1px solid #bbb;
 }
 form {
   max-height: 75vh;
