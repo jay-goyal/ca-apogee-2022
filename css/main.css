@@ -20,7 +20,7 @@ body {
 }
 body::before {
   display: block;
-  content: '';
+  content: "";
   position: absolute;
   opacity: 0.1;
   top: 0;
@@ -39,7 +39,7 @@ header {
   height: 100px;
   width: 100%;
   background: #111;
-  box-shadow: 0 11px 36px rgba(0,0,0,0.16);
+  box-shadow: 0 11px 36px rgba(0, 0, 0, 0.16);
   font-size: 2.7rem;
   color: #fff;
   font-family: "Coves";
@@ -55,11 +55,11 @@ header label span:nth-child(2) {
   color: #f33562;
 }
 header label span:nth-child(3) {
-  color: #95989A;
+  color: #95989a;
   font-size: 2rem;
   font-weight: normal;
 }
-header label:nth-child(n+2) {
+header label:nth-child(n + 2) {
   font-weight: normal;
   font-size: 1.5rem;
 }
@@ -69,42 +69,53 @@ header label:nth-child(n+2) {
   align-items: center;
   justify-content: center;
 }
-.secdiv, .secr, .secl {
+.secdiv,
+.secr,
+.secl {
   width: 600px;
   max-width: 90%;
-  font-family: 'Coves';
+  font-family: "Coves";
   text-align: center;
 }
-.secdiv h1, .secr h1, .secl h1, .lgn h1 {
+.secdiv h1,
+.secr h1,
+.secl h1,
+.lgn h1 {
   font-size: 3.5rem;
   margin: 0;
   position: relative;
 }
-.secdiv h1::after, .secdiv.underline h2::after, .secr h1::after, .secl h1::after, .lgn h1::after  {
+.secdiv h1::after,
+.secdiv.underline h2::after,
+.secr h1::after,
+.secl h1::after,
+.lgn h1::after {
   display: block;
   position: absolute;
   bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  content: '';
+  content: "";
   height: 3px;
   width: 55%;
-  background: #F33562;
+  background: #f33562;
 }
 
 .start {
   width: 600px;
   max-width: 90%;
-  font-family: 'Coves';
+  font-family: "Coves";
   text-align: center;
 }
 .start h1 {
   font-size: 2.5rem;
   margin: 0;
   position: relative;
-  color: #F33562;
+  color: #f33562;
 }
-.secdiv p, .secr p, .secl p {
+.secdiv p,
+.secr p,
+.secl p {
   font-size: 1.4rem;
   font-family: "Raleway";
 }
@@ -116,7 +127,7 @@ header label:nth-child(n+2) {
     background-size: auto 40px;
     background-position-x: calc(100% - 10px);
   }
-  header label span:nth-child(n+3) {
+  header label span:nth-child(n + 3) {
     display: none;
   }
   header label:nth-child(2) {
@@ -135,7 +146,7 @@ header label:nth-child(n+2) {
     font-size: 2.2rem;
     justify-content: center;
   }
-  header label span:nth-child(n+3) {
+  header label span:nth-child(n + 3) {
     display: none;
   }
   header label:nth-child(2) {
@@ -149,18 +160,37 @@ header label:nth-child(n+2) {
   }
 }
 
-.secr div:nth-child(1), .secl div:nth-child(1) {
+.secr div:nth-child(1),
+.secl div:nth-child(1) {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  min-width: 150px; min-height: 150px;
+  min-width: 150px;
+  min-height: 150px;
 }
-.secr h1, .secl h1 { font-size: 2rem; }
-.secr {text-align: right;}
-.secl {text-align: left;}
-.secr h1::after {transform: translateX(0); right: 0; left: auto; width: 300px}
-.secl h1::after {transform: translateX(0); left: 0; width: 300px}
-.secr p, .secl p {
+.secr h1,
+.secl h1 {
+  font-size: 2rem;
+}
+.secr {
+  text-align: right;
+}
+.secl {
+  text-align: left;
+}
+.secr h1::after {
+  transform: translateX(0);
+  right: 0;
+  left: auto;
+  width: 300px;
+}
+.secl h1::after {
+  transform: translateX(0);
+  left: 0;
+  width: 300px;
+}
+.secr p,
+.secl p {
   font-size: 1.2rem;
 }
 .secr {
@@ -184,12 +214,29 @@ header label:nth-child(n+2) {
   color: #f33562;
   font-size: 0.85rem;
 }
-@media all and (max-width: 600px){
-  .secr div:nth-child(1), .secl div:nth-child(1) {min-height: 100px}
-  .secr p, .secl p {text-align: center}
-  .secr, .secl {flex-direction: column;}
-  .secr h1, .secl h1 {text-align: center; font-size: 1.5rem; margin: 10px 0;}
-  .secr h1::after, .secl h1::after {display: none}
+@media all and (max-width: 600px) {
+  .secr div:nth-child(1),
+  .secl div:nth-child(1) {
+    min-height: 100px;
+  }
+  .secr p,
+  .secl p {
+    text-align: center;
+  }
+  .secr,
+  .secl {
+    flex-direction: column;
+  }
+  .secr h1,
+  .secl h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  .secr h1::after,
+  .secl h1::after {
+    display: none;
+  }
   .secdiv h2 {
     font-size: 1.2rem;
     position: relative;
@@ -210,15 +257,15 @@ header label:nth-child(n+2) {
   }
 }
 
-@media all and (max-width: 450px){
+@media all and (max-width: 450px) {
   .secdiv h1 {
-    text-align: center; 
-    font-size: 2rem; 
+    text-align: center;
+    font-size: 2rem;
     margin: 10px 0;
   }
   .start h1 {
     font-size: 1.6rem;
-  }  
+  }
   .secdiv h2 {
     font-size: 1.2rem;
   }
@@ -228,27 +275,38 @@ header label:nth-child(n+2) {
 }
 
 @keyframes arrow {
-  0% {opacity: 0}
-  75% {opacity: 1}
-  100% {opacity: 0}
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent #111 !important;
-  animation: 2s arrow cubic-bezier(1,0,0,1) both infinite;
+  animation: 2s arrow cubic-bezier(1, 0, 0, 1) both infinite;
 }
 .fp-controlArrow.fp-prev {
   border-color: transparent #111 transparent transparent !important;
-  animation: 2s arrow cubic-bezier(1,0,0,1) both infinite;
+  animation: 2s arrow cubic-bezier(1, 0, 0, 1) both infinite;
 }
 
-
 @media all and (max-width: 700px) {
-  .fp-controlArrow.fp-next, .fp-controlArrow,fp-prev {
+  .fp-controlArrow.fp-next,
+  .fp-controlArrow,
+  fp-prev {
     transform: scale(0.5);
   }
-  .fp-controlArrow.fp-next {right: -5px}
-  .fp-controlArrow.fp-prev {left: -5px}
+  .fp-controlArrow.fp-next {
+    right: -5px;
+  }
+  .fp-controlArrow.fp-prev {
+    left: -5px;
+  }
 }
 
 .secdiv.small p {
@@ -262,7 +320,7 @@ header label:nth-child(n+2) {
 
 .secdiv.small::after {
   display: block;
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -284,7 +342,8 @@ img {
   margin: 0 20px;
 }
 
-button, .scroll-btn button {
+button,
+.scroll-btn button {
   height: 3rem;
   padding: 0 30px;
   font-size: 1.4rem;
@@ -294,7 +353,8 @@ button, .scroll-btn button {
   cursor: pointer;
   white-space: nowrap;
 }
-button:hover, .scroll-btn button:hover {
+button:hover,
+.scroll-btn button:hover {
   border: 1px solid #fff;
   color: #fff;
   background: #111 !important;
@@ -309,14 +369,14 @@ button:hover, .scroll-btn button:hover {
   height: 100%;
   z-index: 3;
   background: #fff;
-  transition: 0.7s top cubic-bezier(.59,.6,0,1.01);
+  transition: 0.7s top cubic-bezier(0.59, 0.6, 0, 1.01);
   font-family: "Raleway";
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 form::before {
   display: none;
-  content: '';
+  content: "";
   position: fixed;
   pointer-events: none;
   top: 0;
@@ -324,12 +384,12 @@ form::before {
   width: 100%;
   height: 100%;
   background: url(../img/bg.jpg);
-  opacity: 0.1; 
+  opacity: 0.1;
 }
 .r {
   display: flex;
   flex-direction: row;
-  justify-content: center
+  justify-content: center;
 }
 .r div {
   padding: 10px 20px;
@@ -340,7 +400,8 @@ form::before {
 .r > div:nth-child(2) {
   width: 450px;
 }
-input, textarea {
+input,
+textarea {
   width: 100% !important;
   border: 0;
   border-bottom: 1px solid #bbb;
@@ -348,7 +409,9 @@ input, textarea {
   font-size: 1.2rem;
   cursor: pointer;
 }
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   border-bottom-color: #777;
 }
 select {
@@ -366,9 +429,14 @@ form {
   margin-top: 50px;
 }
 
-p.small, span.small {display: none;}
+p.small,
+span.small {
+  display: none;
+}
 
-div.different {display: none;}
+div.different {
+  display: none;
+}
 
 @media all and (max-width: 700px) {
   .r {
@@ -386,16 +454,26 @@ div.different {display: none;}
     font-size: 1.2rem;
     height: 2.5rem;
   }
-  p.nosmall, span.nosmall {display: none}
-  p.small, span.small {display: block;}
+  p.nosmall,
+  span.nosmall {
+    display: none;
+  }
+  p.small,
+  span.small {
+    display: block;
+  }
 
-  div.different {display: flex;}
-  div.same {display: none !important;}
-  
-.alert {
-  color: black;
-  font-size: 0.7rem;
-}
+  div.different {
+    display: flex;
+  }
+  div.same {
+    display: none !important;
+  }
+
+  .alert {
+    color: black;
+    font-size: 0.7rem;
+  }
 }
 
 #menu {
@@ -405,7 +483,7 @@ div.different {display: none;}
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center
+  align-items: center;
 }
 #menu label {
   font-size: 1.3rem;
@@ -423,7 +501,123 @@ div.different {display: none;}
   text-align: center;
 }
 
-button:disabled, button[disabled] {
+button:disabled,
+button[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+/* testimonial CSS */
+
+.testimonial-card {
+  display: flex;
+  flex-direction: row;
+  width: 650px;
+  align-items: center;
+}
+
+.mtop40 {
+  margin-top: 40px;
+}
+
+.ts-img {
+  width: 30%;
+  margin-right: 30px;
+}
+
+.ts-img-item {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.ts-text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ts-name {
+  font-size: 28px;
+  font-family: "Coves";
+  font-weight: bold;
+}
+
+.ts-desc {
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: normal;
+  font-family: "Coves";
+}
+
+.ts-desc2 {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: normal;
+  font-family: "Coves";
+}
+
+@media only screen and (max-width: 600px) {
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mtop40 {
+    margin-left: 0px;
+  }
+
+  .shiftright40 {
+    margin-left: 40px;
+  }
+
+  .shiftleft40 {
+    margin-left: 0px;
+  }
+
+  .slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ts-img {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ts-img-item {
+    margin-left: 30px;
+  }
+
+  .ts-desc {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-family: "Coves";
+  }
+
+  .ts-text {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ts-desc2 {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-family: "Coves";
+  }
 }
