@@ -1,435 +1,558 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>APOGEE'22 | Campus Ambassador</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="css/scrollBtn.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/scrolloverflow.min.js" charset="utf-8"></script>
+    <script src="js/jquery.fullPage.js" charset="utf-8"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>APOGEE'22 | Campus Ambassador</title>
-  <link rel="stylesheet" href="css/jquery.fullPage.css" />
-  <link rel="stylesheet" href="css/scrollBtn.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/jquery.min.js" charset="utf-8"></script>
-  <script src="js/scrolloverflow.min.js" charset="utf-8"></script>
-  <script src="js/jquery.fullPage.js" charset="utf-8"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <body>
+    <header style="cursor: pointer">
+      <label style="flex-direction: column; justify-content: center">
+        <p style="margin: 0; display: flex; align-items: center">
+          <span>APOGEE</span>&nbsp;<span>'22</span
+          ><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span>
+        </p>
+        <p style="margin: 0; font-size: 1.05rem; color: #777"></p>
+      </label>
 
-</head>
-
-<body>
-  <header style="cursor: pointer">
-    <label style="flex-direction: column; justify-content: center; ">
-      <p style="margin: 0; display: flex; align-items: center">
-        <span>APOGEE</span>&nbsp;<span>'22</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;BITS Pilani</span>
-      </p>
-      <p style="margin: 0; font-size: 1.05rem; color: #777">
-
-      </p>
-    </label>
-    <div id="menu">
-      <label onclick="sp(2)">HOME</label>
-      <label onclick="sp(3)">PERKS</label>
-      <label onclick="sp(4)">TESTIMONIALS</label>
-      <label onclick="sp(5)">RESPONSIBILITIES</label>
-      <label onclick="sp(6)">FAQs</label>
-      <label onclick="sp(7)">CONTACT US</label>
-      <label id="leaderboard">LEADERBOARD</label>
-    </div>
-  </header>
-  <span class="scroll-btn">
-    <a href="#"><span class="mouse"><span></span></span><span class="nosmall">scroll down for next section</span><span
-        id="down" class="small">tap to go to next section</span></a>
-    <button id="register">Register Now</button>
-
-  </span>
-  <div id="fullpage">
-    <div class="section">
-      <div class="start">
-        <img src="img/apogee-logo.svg" style="width:700vw; padding-bottom: 50px">
-        <h1 style="color: #F33562;">Become the Leader of your College</h1>
+      <div id="menu">
+        <label onclick="sp(2)">HOME</label>
+        <label onclick="sp(3)">PERKS</label>
+        <label onclick="sp(4)">TESTIMONIALS</label>
+        <label onclick="sp(5)">RESPONSIBILITIES</label>
+        <label onclick="sp(6)">FAQs</label>
+        <label onclick="sp(7)">CONTACT US</label>
+        <label id="leaderboard">LEADERBOARD</label>
       </div>
-    </div>
-    <div class="section">
-      <div class="secdiv">
-        <h1>WHAT IS APOGEE?</h1>
-        <p class="nosmall">APOGEE, the technical festival of BITS Pilani, is in its 40th year now and is bigger than
-          ever. Considered to be one of the biggest platforms to discover, nurture and accelerate fresh ideas from
-          bright minds all over the country, this festival attracts more than 8000 students, spanning over a 100
-          colleges.</p>
-        <p class="small">APOGEE, the technical festival of BITS Pilani, is in its 40th year now and is bigger than ever.
-          Considered to be one of the biggest platforms to discover, nurture and accelerate fresh ideas from bright
-          minds all over the country, this festival attracts more than 8000 students, spanning over a 100 colleges.</p>
+
+  
+
+   
+    </header>
+    <div id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+  </div>
+    <ul class="mobile-menu hide">
+      <li onclick="sp(2)">Home</li>
+      <li onclick="sp(3)">Perks</li>
+      <li onclick="sp(4)">Testimonials</li>
+      <li onclick="sp(5)">Responsibilities</li>
+      <li onclick="sp(6)">Faqs</li>
+      <li onclick="sp(7)">Contact us</li>
+      <li id="leaderboard1">Leaderboard</li>
+    </ul>
+
+    <span class="scroll-btn">
+      <a href="#"
+        ><span class="mouse"><span></span></span
+        ><span class="nosmall">scroll down for next section</span
+        ><span id="down" class="small">tap to go to next section</span></a
+      >
+      <button id="register">Register Now</button>
+    </span>
+    <div id="fullpage">
+      <div class="section">
+        <div class="start">
+          <img
+            src="img/apogee-logo.svg"
+            style="width: 700vw; padding-bottom: 50px"
+          />
+          <h1 style="color: #f33562">Become the Leader of your College</h1>
+        </div>
       </div>
-    </div>
-
-
-
-    <div class="section">
-      <div class="slide">
+      <div class="section">
         <div class="secdiv">
-          <h1>Rewards and Incentives</h1>
-          <p>
-            Become a campus ambassador to stand a chance to win cash prizes, get <b>LoRs, Merchandise, Speaker
-              Meetup/Workshop Passes</b> and much much more!
-            <br>
-            Click on the right button to know more about what you get!
+          <h1>WHAT IS APOGEE?</h1>
+          <p class="nosmall">
+            APOGEE, the technical festival of BITS Pilani, is in its 40th year
+            now and is bigger than ever. Considered to be one of the biggest
+            platforms to discover, nurture and accelerate fresh ideas from
+            bright minds all over the country, this festival attracts more than
+            8000 students, spanning over a 100 colleges.
           </p>
-          <img src="img/dare2compete.png" height="80px">
-          <img src="img/duexpress.png" height="100px">
+          <p class="small">
+            APOGEE, the technical festival of BITS Pilani, is in its 40th year
+            now and is bigger than ever. Considered to be one of the biggest
+            platforms to discover, nurture and accelerate fresh ideas from
+            bright minds all over the country, this festival attracts more than
+            8000 students, spanning over a 100 colleges.
+          </p>
         </div>
       </div>
-      <div class="slide">
-        <div class="secl">
-          <div style="background-image:url(img/building.svg)"></div>
-          <div>
-            <h1>CASH PRIZES AND PASSES WORTH 2LAKHS TO BE WON</h1>
-            <p>Top Campus ambassadors will get assured working opportunities with Du Express, Dare2Compete and also
-              internship opportunities through the Summer in Startup programme of BITS Pilani.</p>
+
+      <div class="section">
+        <div class="slide">
+          <div class="secdiv">
+            <h1>Rewards and Incentives</h1>
+            <p>
+              Become a campus ambassador to stand a chance to win cash prizes,
+              get <b>LoRs, Merchandise, Speaker Meetup/Workshop Passes</b> and
+              much much more!
+              <br />
+              Click on the right button to know more about what you get!
+            </p>
+            <img src="img/dare2compete.png" height="80px" />
+            <img src="img/duexpress.png" height="100px" />
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secl">
+            <div style="background-image: url(img/building.svg)"></div>
+            <div>
+              <h1>CASH PRIZES AND PASSES WORTH 2LAKHS TO BE WON</h1>
+              <p>
+                Top Campus ambassadors will get assured working opportunities
+                with Du Express, Dare2Compete and also internship opportunities
+                through the Summer in Startup programme of BITS Pilani.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secr">
+            <div style="background-image: url(img/diploma.svg)"></div>
+            <div>
+              <h1>LORs &amp; CERTIFICATES</h1>
+              <p>
+                CA will get a certificate from BITS Pilani appreciating their
+                work and the top best performing ambassadors will get a letter
+                of recommendation.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secr">
+            <div style="background-image: url(img/package.svg)"></div>
+            <div>
+              <h1>GOODIES &amp; MERCHANDISE</h1>
+              <p>
+                APOGEE and sponsor merchandise will be given to ALL ambassadors.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide nosmall">
+          <div class="secl">
+            <div style="background-image: url(img/cash.svg)"></div>
+            <div>
+              <h1>FREE COUPONS</h1>
+              <p>
+                GeeksForGeeks Coupons worth rupees 300 for completion of first 2
+                tasks will be provided.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="slide">
-        <div class="secr">
-          <div style="background-image:url(img/diploma.svg)"></div>
-          <div>
-            <h1>LORs &amp; CERTIFICATES</h1>
-            <p>CA will get a certificate from BITS Pilani appreciating their work and the top best performing
-              ambassadors will get a letter of recommendation.</p>
+
+      <div class="section">
+        <div class="slide">
+          <div class="secdiv">
+            <h1>TESTIMONIALS</h1>
+
+            <div class="testimonial-card mtop40 shiftright40">
+              <div class="ts-img">
+                <img src="img/testimonial1.png" class="ts-img-item" />
+              </div>
+              <div class="ts-text">
+                <div class="ts-name">Pranati Tiwari</div>
+                <div class="ts-desc">
+                  I’m a 2nd Year BTech Student of Jaypee Institute of
+                  information technology, Noida. I participated as a Campus
+                  Ambassador of the first online edition of Apogee,Techfest of
+                  Bits Pilani. It helped me gain the experience of working as a
+                  team in promoting the event all over the social media
+                  platforms and build my resume.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="slide">
-        <div class="secr">
-          <div style="background-image:url(img/package.svg)"></div>
-          <div>
-            <h1>GOODIES &amp; MERCHANDISE</h1>
-            <p>APOGEE and sponsor merchandise will be given to ALL ambassadors.</p>
-          </div>
-        </div>
-      </div>
-      <div class="slide nosmall">
-        <div class="secl">
-          <div style="background-image:url(img/cash.svg)"></div>
-          <div>
-            <h1>FREE COUPONS</h1>
-            <p>GeeksForGeeks Coupons worth rupees 300 for completion of first 2 tasks will be provided.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-    <div class="section">
-      <div class="slide">
-        <div class="secdiv">
-          <h1>TESTIMONIALS</h1>
-
-          <div class="testimonial-card mtop40 shiftright40">
+        <div class="slide">
+          <div class="testimonial-card shiftleft40">
             <div class="ts-img">
-              <img src="img/testimonial1.png" class="ts-img-item" />
+              <img src="img/testimonial2.png" class="ts-img-item" />
             </div>
             <div class="ts-text">
-              <div class="ts-name">Pranati Tiwari</div>
-              <div class="ts-desc">I’m a 2nd Year BTech Student of Jaypee Institute of information technology, Noida. I
-                participated as a Campus Ambassador of the first online edition of Apogee,Techfest of Bits Pilani. It
-                helped me gain the experience of working as a team in promoting the event all over the social media
-                platforms and build my resume.</div>
+              <div class="ts-name">Kuldeep Dwivedi</div>
+              <div class="ts-desc">
+                I really enjoyed working as a Campus Ambassador for APOGEE BITS
+                Pilani. Working with a great team of leaders and fellow students
+                on varied events made each day different and exciting. As well
+                as it being a great way to meet new people and develop yourself
+                as a person. Becoming a Campus Ambassador really helped my
+                confidence and I definitely learned a lot along the way.
+              </div>
             </div>
           </div>
+        </div>
+        <div class="slide">
+          <div class="testimonial-card">
+            <div class="ts-img">
+              <img src="img/testimonial3.png" class="ts-img-item" />
+            </div>
+            <div class="ts-text">
+              <div class="ts-name">Rajalingam M</div>
+              <div class="ts-desc">
+                This will be definitely a great internship for who needs to
+                improve their outreach, professional communication and
+                networking skills. Moreover, even in this pandemic and remote
+                working, it again made it's wonderful tech festival to great
+                height without fail.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="testimonial-card">
+            <div class="ts-img">
+              <img src="img/testimonial4.png" class="ts-img-item" />
+            </div>
+            <div class="ts-text">
+              <div class="ts-name">Bharti Kumari</div>
+              <div class="ts-desc2">
+                I began working as a Campus Ambassador (CA) when I was in Third
+                year. I first worked an Open Day and after that, I was hooked!
+                The work is varied which keeps it interesting, from campus tours
+                to sign in desks and setting up for events, it helped me develop
+                lots of skills which I'm sure I will use in my future career.
+                It's also great that you can fit the work in around your college
+                schedule and make use of hours off in college to earn some extra
+                skills! The work was always good fun because you were with other
+                people. I met lots of great people while working in the role,
+                both staff, students, the public and the odd celebrity,
+                professors too(in virtual mode) which I would have never met,
+                had I not been a CA. For me, working as a CA is all about the
+                people. I would encourage anyone that likes meeting new people,
+                is friendly and helpful to apply for a role as an CA.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide nosmall">
+          <div class="testimonial-card">
+            <div class="ts-img">
+              <img src="img/testimonial5.png" class="ts-img-item" />
+            </div>
+            <div class="ts-text">
+              <div class="ts-name">Namita Tupkar</div>
+              <div class="ts-desc">
+                My experience being a campus ambassador of APOGEE was pretty
+                amazing. The events were very nicely organised even though they
+                were held virtually. It was a very good experience wherein the
+                day to day activities and tasks were well carried out. The
+                internship offered and gave me such a wonderful time that I'll
+                always cherish. The management of the entire event was really
+                nice.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        </div>
-      </div>
-      <div class="slide">
-        <div class="testimonial-card shiftleft40">
-          <div class="ts-img">
-            <img src="img/testimonial2.png" class="ts-img-item" />
-          </div>
-          <div class="ts-text">
-            <div class="ts-name">Kuldeep Dwivedi</div>
-            <div class="ts-desc">I really enjoyed working as a Campus Ambassador for APOGEE BITS Pilani. Working with a
-              great team of leaders and fellow students on varied events made each day different and exciting. As well
-              as it being a great way to meet new people and develop yourself as a person. Becoming a Campus Ambassador
-              really helped my confidence and I definitely learned a lot along the way. </div>
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="testimonial-card">
-          <div class="ts-img">
-            <img src="img/testimonial3.png" class="ts-img-item" />
-          </div>
-          <div class="ts-text">
-            <div class="ts-name">Rajalingam M</div>
-            <div class="ts-desc">This will be definitely a great internship for who needs to improve their outreach,
-              professional communication and networking skills. Moreover, even in this pandemic and remote working, it
-              again made it's wonderful tech festival to great height without fail.</div>
+      <div class="section">
+        <div class="slide">
+          <div class="secdiv">
+            <h1>RESPONSIBILITIES</h1>
+            <p>
+              As a campus ambassador,the primary task will be to coordinate with
+              APOGEE to strategize campaigns to make the fest bigger and better,
+              you will also have certain responsibilities like managing social
+              media, publicity and organising workshops.
+              <br />
+              Click on the right arrow to know more!
+            </p>
           </div>
         </div>
-      </div>
-      <div class="slide">
-        <div class="testimonial-card">
-          <div class="ts-img">
-            <img src="img/testimonial4.png" class="ts-img-item" />
-          </div>
-          <div class="ts-text">
-            <div class="ts-name">Bharti Kumari </div>
-            <div class="ts-desc2">I began working as a Campus Ambassador (CA) when I was in Third year. I first worked
-              an
-              Open Day and after that, I was hooked! The work is varied which keeps it interesting, from campus tours to
-              sign in desks and setting up for events, it helped me develop lots of skills which I'm sure I will use in
-              my future career. It's also great that you can fit the work in around your college schedule and make use
-              of hours off in college to earn some extra skills! The work was always good fun because you were with
-              other people. I met lots of great people while working in the role, both staff, students, the public and
-              the odd celebrity, professors too(in virtual mode) which I would have never met, had I not been a CA. For
-              me, working as a CA is all about the people. I would encourage anyone that likes meeting new people, is
-              friendly and helpful to apply for a role as an CA.</div>
+        <div class="slide">
+          <div class="secdiv underline">
+            <h2>SOCIAL MEDIA PLATFORMS</h2>
+            <p>
+              The campus ambassador has to maintain a strong social media
+              presence on Facebook and Instagram to represent APOGEE and hence
+              increase its popularity.
+            </p>
+            <h2>CAMPUS PUBLICITY</h2>
+            <p>
+              Publicity of APOGEE by sending route mails and messages on college
+              WhatsApp groups along with visual presentation of the fest through
+              posters, fliers etc.
+            </p>
+            <h2>WORKSHOPS</h2>
+            <p>
+              Organising technical events workshops in their college under the
+              guidance of APOGEE, BITS Pilani.
+            </p>
           </div>
         </div>
       </div>
-      <div class="slide nosmall">
-        <div class="testimonial-card">
-          <div class="ts-img">
-            <img src="img/testimonial5.png" class="ts-img-item" />
+      <div class="section">
+        <div class="slide">
+          <div class="secdiv">
+            <h1>FAQs</h1>
+            <h2>What is CA?</h2>
+            <p>
+              A campus ambassador is the one responsible for the outreach and
+              publicity of the festival in their college. Simply put, you would
+              be the face of the festival as well as BITS itself for the
+              students in your college.
+            </p>
           </div>
-          <div class="ts-text">
-            <div class="ts-name">Namita Tupkar</div>
-            <div class="ts-desc">My experience being a campus ambassador of APOGEE was pretty amazing. The events were
-              very nicely organised even though they were held virtually. It was a very good experience wherein the day
-              to day activities and tasks were well carried out. The internship offered and gave me such a wonderful
-              time that I'll always cherish. The management of the entire event was really nice.</div>
+        </div>
+        <div class="slide">
+          <div class="secdiv">
+            <h2>Who can become a Campus Ambassador?</h2>
+            <p>
+              Any College Student with a valid College Student Identity Card.
+            </p>
           </div>
+        </div>
+        <div class="slide">
+          <div class="secdiv">
+            <h2>How to become a College Ambassador?</h2>
+            <p>
+              By Simply Registering on the College Ambassador Portal. You can
+              initiate your registration process by clicking on the "Register"
+              button at the opening page.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secdiv">
+            <h2>How many CAs can be there from a college?</h2>
+            <p>
+              APOGEE can appoint more than one College Ambassador from the same
+              college if the student participation from that college is large
+              enough. Your appointment will be confirmed via a call after the
+              registrations close. Incase of multiple applications, Campus
+              Ambassadors may be selected on the basis of their performance in a
+              short task given by APOGEE 2022.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secdiv">
+            <h2>
+              What are the conditions under which I will get a CA Certificate?
+            </h2>
+            <p>
+              In order to get a CA Certificate, College Ambassadors will have to
+              earn more than the minimum Cut-off points which would be set by
+              APOGEE, BITS Pilani. The Points allocation can be seen under the
+              tab “Points Scheme”.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="secdiv">
+            <h2>How much do I have to work to Top the Leaderboard?</h2>
+            <p>
+              Completion of every task on time would keep you on the list of
+              contenders for the top positions to grab the incentives of
+              Internships and monetary concession at APOGEE 2022.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="secdiv" style="max-height: 400px; max-width: 100%">
+          <h1>Contact Us</h1>
+          <h2>Yashwasin Jain</h2>
+          <p>+91 88507 81560</p>
+          <a href="mailto:f20201547@pilani.bits-pilani.ac.in">
+            <p>f20201547@pilani.bits-pilani.ac.in</p>
+          </a>
+          <h2>Mayan Agrawal</h2>
+          <p>+91 94235 27868</p>
+          <a href="mailto:f20201863@pilani.bits-pilani.ac.in">
+            <p>f20201863@pilani.bits-pilani.ac.in</p>
+          </a>
+          <a href="devs.html" style="font-size: 1.5rem"
+            >For any technical issues, click here</a
+          >
         </div>
       </div>
     </div>
-
-
-
-
-
-    <div class="section">
-      <div class="slide">
-        <div class="secdiv">
-          <h1>RESPONSIBILITIES</h1>
-          <p>
-            As a campus ambassador,the primary task will be to coordinate with APOGEE to strategize campaigns to make
-            the fest bigger and better, you will also have certain responsibilities like managing social media,
-            publicity and organising workshops.
-            <br>
-            Click on the right arrow to know more!
-          </p>
+    <div class="form" id="regform">
+      <form>
+        <div class="r">
+          <div>Name</div>
+          <div>
+            <input type="text" name="first" id="regform-first" required />
+          </div>
         </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv underline">
-          <h2>SOCIAL MEDIA PLATFORMS</h2>
-          <p>The campus ambassador has to maintain a strong social media presence on Facebook and Instagram to represent
-            APOGEE and hence increase its popularity.</p>
-          <h2>CAMPUS PUBLICITY</h2>
-          <p>Publicity of APOGEE by sending route mails and messages on college WhatsApp groups along with visual
-            presentation of the fest through posters, fliers etc.</p>
-          <h2>WORKSHOPS</h2>
-          <p>Organising technical events workshops in their college under the guidance of APOGEE, BITS Pilani.</p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="slide">
-        <div class="secdiv">
-          <h1>FAQs</h1>
-          <h2>What is CA?</h2>
-          <p>A campus ambassador is the one responsible for the outreach and publicity of the festival in their college.
-            Simply put, you would be the face of the festival as well as BITS itself for the students in your college.
-          </p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv">
-          <h2>Who can become a Campus Ambassador?</h2>
-          <p>Any College Student with a valid College Student Identity Card.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv">
-          <h2>How to become a College Ambassador?</h2>
-          <p>By Simply Registering on the College Ambassador Portal. You can initiate your registration process by
-            clicking on the "Register" button at the opening page.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv">
-          <h2>How many CAs can be there from a college?</h2>
-          <p>APOGEE can appoint more than one College Ambassador from the same college if the student participation from
-            that college is large enough. Your appointment will be confirmed via a call after the registrations close.
-            Incase of multiple applications, Campus Ambassadors may be selected on the basis of their performance in a
-            short task given by APOGEE 2022.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv">
-          <h2>What are the conditions under which I will get a CA Certificate?</h2>
-          <p>In order to get a CA Certificate, College Ambassadors will have to earn more than the minimum Cut-off
-            points which would be set by APOGEE, BITS Pilani. The Points allocation can be seen under the tab “Points
-            Scheme”.</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="secdiv">
-          <h2>How much do I have to work to Top the Leaderboard?</h2>
-          <p>Completion of every task on time would keep you on the list of contenders for the top positions to grab the
-            incentives of Internships and monetary concession at APOGEE 2022.</p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="secdiv" style="max-height: 400px; max-width: 100%">
-        <h1>Contact Us</h1>
-        <h2>Yashwasin Jain</h2>
-        <p>+91 88507 81560</p>
-        <a href="mailto:f20201547@pilani.bits-pilani.ac.in">
-          <p>f20201547@pilani.bits-pilani.ac.in</p>
-        </a>
-        <h2>Mayan Agrawal</h2>
-        <p>+91 94235 27868</p>
-        <a href="mailto:f20201863@pilani.bits-pilani.ac.in">
-          <p>f20201863@pilani.bits-pilani.ac.in</p>
-        </a>
-        <a href="devs.html" style="font-size: 1.5rem;">For any technical issues, click here</a>
-      </div>
-    </div>
-  </div>
-  <div class="form" id="regform">
-    <form>
-      <div class="r">
-        <div>Name</div>
-        <div><input type="text" name="first" id="regform-first" required></div>
-      </div>
-      <!-- <div class="r">
+        <!-- <div class="r">
           <div>Last name</div>
           <div><input type="text" name="last" id="regform-last" required></div>
         </div> -->
-      <div class="r">
-        <div>Email</div>
-        <div><input type="text" name="email" id="regform-email" required></div>
-      </div>
-      <!-- <div class="r">
+        <div class="r">
+          <div>Email</div>
+          <div>
+            <input type="text" name="email" id="regform-email" required />
+          </div>
+        </div>
+        <!-- <div class="r">
           <div>address</div>
           <div><textarea name="address" rows="3" id="regform-address"></textarea></div>
         </div> -->
-      <div class="r">
-        <div>College</div>
-        <!-- <div><input type="text" name="college"></div> -->
-        <div>
-          <span id="loading-colleges">Loading colleges...</span>
-          <select name="" id="regform-collegeselect" disabled>
-            <option value="" selected disabled hidden>Choose your college</option>
-          </select>
-          <br>
-          <p class="alert">If you cannot find your college name, contact PCr APOGEE(+91 95609 55649).</p>
+        <div class="r">
+          <div>College</div>
+          <!-- <div><input type="text" name="college"></div> -->
+          <div>
+            <span id="loading-colleges">Loading colleges...</span>
+            <select name="" id="regform-collegeselect" disabled>
+              <option value="" selected disabled hidden>
+                Choose your college
+              </option>
+            </select>
+            <br />
+            <p class="alert">
+              If you cannot find your college name, contact PCr APOGEE(+91 95609
+              55649).
+            </p>
+          </div>
         </div>
-      </div>
-      <!-- <div class="r">
+        <!-- <div class="r">
           <div>College Strength</div>
           <div><input type="number" name="strength" id="regform-collegestrength"></div>
         </div> -->
-      <div class="r">
-        <div>City</div>
-        <div><input type="text" name="city" id="regform-city"></div>
-      </div>
-      <div class="r">
-        <div>Year of Study</div>
-        <div><input type="number" name="year" id="regform-yearofstudy"></div>
-      </div>
-      <!-- <div class="r">
+        <div class="r">
+          <div>City</div>
+          <div><input type="text" name="city" id="regform-city" /></div>
+        </div>
+        <div class="r">
+          <div>Year of Study</div>
+          <div>
+            <input type="number" name="year" id="regform-yearofstudy" />
+          </div>
+        </div>
+        <!-- <div class="r">
           <div>Degree and field of study</div>
           <div><input type="text" name="degree" id="regform-fieldofstudy"></div>
         </div> -->
-      <div class="r">
-        <div>Mobile Number</div>
-        <div><input type="number" name="mobile" id="regform-mobile"></div>
-      </div>
-      <!-- <div class="r">
+        <div class="r">
+          <div>Mobile Number</div>
+          <div><input type="number" name="mobile" id="regform-mobile" /></div>
+        </div>
+        <!-- <div class="r">
           <div>What makes you a good candidate for campus ambassador?</div>
           <div><textarea name="what" rows="4" id="regform-goodcand"></textarea></div>
         </div> -->
-      <!-- <div class="r">
+        <!-- <div class="r">
           <div>Briefly describe any previous publicity/marketing experience or a CA programme you've been a part of.</div>
           <div><textarea name="experience" rows="4" id="regform-pastexp"></textarea></div>
         </div> -->
-      <!-- <div class="r">
+        <!-- <div class="r">
           <div>Does your college have a mailing list of all students?</div>
           <div><select name="list" id="regform-boolmailinglist"><option>Yes</option><option>No</option></select></div>
         </div> -->
-      <div class="r">
-        <p id="msg"></p>
-      </div>
-      <div class="r">
-        <button id="submit" class="regform-submit" style="margin: 5px">Register</button>
-        <button id="cancel" style="margin: 5px">Cancel</button>
-      </div>
-    </form>
-    <span class="scroll-btn">
-      <a href="#"><span class="mouse"><span></span></span><span>scroll down</span></a>
-    </span>
-  </div>
-</body>
-<script type="text/javascript">
-  function parseError(err) {
-    msg.innerHTML = err;
-    msg.className = "err";
-  }
-  function parseSuccess(message) {
-    msg.innerHTML = message;
-    msg.className = "success";
-  }
-  $(document).ready(function () {
-    $('#fullpage').fullpage({
-      paddingTop: '100px',
-      fitToSection: false,
-      normalScrollElements: '.secdiv.small, .form'
-    });
-  });
-  register.onclick = function () {
-    $('.form').css('top', 0);
-  }
-  cancel.onclick = function () {
-    $('.form').css('top', '100%');
-    return false;
-  }
-  // up.onclick = function() {
-  //   $.fn.fullpage.moveSectionUp();
-  // }
-  down.onclick = function () {
-    $.fn.fullpage.moveSectionDown();
-  }
-  function sp(x) {
-    $('.form').css('top', '100%');
-    $.fn.fullpage.moveTo(x, 0);
-  }
-  // submit.onclick = function() {
-  //   $.ajax({
-  //     url: "https://bits-apogee.org/2018/portal/ca/status/",
-  //     method: "POST",
-  //     data: $('form').serialize(),
-  //     processData: false,
-  //     contentType: "application/x-www-form-urlencoded",
-  //     success: function(result){
-  //       if(result.staus==0)
-  //         parseError(result.message);
-  //       else
-  //         parseSuccess(result.message);
-  //     },
-  //     error: function(er){
-  //       parseError("Please Try Again");
-  //     }
-  //   });
-  //   return false;
-  // }
-  leaderboard.onclick = function () {
-    window.location.href = "leaderboard.html";
-  }
-</script>
-<script src="js/back.js"></script>
+        <div class="r">
+          <p id="msg"></p>
+        </div>
+        <div class="r">
+          <button id="submit" class="regform-submit" style="margin: 5px">
+            Register
+          </button>
+          <button id="cancel" style="margin: 5px">Cancel</button>
+        </div>
+      </form>
+      <span class="scroll-btn">
+        <a href="#"
+          ><span class="mouse"><span></span></span><span>scroll down</span></a
+        >
+      </span>
+    </div>
+  </body>
+  <script type="text/javascript">
 
+let burger = document.querySelector("#hamburger");
+let menu = document.querySelector(".mobile-menu");
+burger.addEventListener("click", function () {
+  menu.classList.toggle("navActive");
+  burger.classList.toggle("open");
+});
+
+document.querySelectorAll(".mobile-menu li").forEach(i=>{
+  i.addEventListener("click", function () {
+  menu.classList.toggle("navActive");
+  burger.classList.toggle("open");
+});
+})
+
+
+
+
+    function parseError(err) {
+      msg.innerHTML = err;
+      msg.className = "err";
+    }
+    function parseSuccess(message) {
+      msg.innerHTML = message;
+      msg.className = "success";
+    }
+    $(document).ready(function () {
+      $("#fullpage").fullpage({
+        paddingTop: "100px",
+        fitToSection: false,
+        normalScrollElements: ".secdiv.small, .form",
+      });
+    });
+    register.onclick = function () {
+      $(".form").css("top", 0);
+    };
+    cancel.onclick = function () {
+      $(".form").css("top", "100%");
+      return false;
+    };
+    // up.onclick = function() {
+    //   $.fn.fullpage.moveSectionUp();
+    // }
+    down.onclick = function () {
+      $.fn.fullpage.moveSectionDown();
+    };
+    function sp(x) {
+      $(".form").css("top", "100%");
+      $.fn.fullpage.moveTo(x, 0);
+    }
+    // submit.onclick = function() {
+    //   $.ajax({
+    //     url: "https://bits-apogee.org/2018/portal/ca/status/",
+    //     method: "POST",
+    //     data: $('form').serialize(),
+    //     processData: false,
+    //     contentType: "application/x-www-form-urlencoded",
+    //     success: function(result){
+    //       if(result.staus==0)
+    //         parseError(result.message);
+    //       else
+    //         parseSuccess(result.message);
+    //     },
+    //     error: function(er){
+    //       parseError("Please Try Again");
+    //     }
+    //   });
+    //   return false;
+    // }
+    leaderboard1.onclick = function () {
+      window.location.href = "leaderboard.html";
+    };
+    leaderboard.onclick = function () {
+      window.location.href = "leaderboard.html";
+    };
+  </script>
+  <script src="js/back.js"></script>
 </html>
