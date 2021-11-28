@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/clusterize.css">
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/clusterize.js"></script>
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Leaderboard | APOGEE CA</title>
     <style>
         body {
@@ -100,6 +101,19 @@
           <label onclick="home()">HOME</label>
         </div>
     </header>
+    <div id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+      <ul class="mobile-menu hide">
+        <li onclick="switchp(1)">Leaderboard</li>
+        <li onclick="switchp(2)">Incentives</li>
+        <li onclick="switchp(3)">Responsibilities</li>
+        <li onclick="switchp(4)">Points Scheme</li>
+        <li onclick="home()">Home</li>
+
+      </ul>
     <section class="lgn">
         <ul class="switch">
             <li class="s1">
@@ -420,13 +434,28 @@
         </ul>
     </section>
     <script>
+
+let burger = document.querySelector("#hamburger");
+let menu = document.querySelector(".mobile-menu");
+burger.addEventListener("click", function () {
+  menu.classList.toggle("navActive");
+  burger.classList.toggle("open");
+});
+
+
+document.querySelectorAll(".mobile-menu li").forEach(i=>{
+  i.addEventListener("click", function () {
+  menu.classList.toggle("navActive");
+  burger.classList.toggle("open");
+});
+})
         var baseUrl = 'https://bits-apogee.org/2021/collegeambassador';
 
         function home() {
             window.location.href = "index.html";
         }
         function switchp(num) {
-            document.querySelector("ul").style.top = "-" + (num-1)*100 + "%";
+            document.querySelector(".lgn ul").style.top = "-" + (num-1)*100 + "%";
         }
         function redirect(loc) {
             window.location.href = loc;
