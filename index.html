@@ -461,6 +461,40 @@
           <div><select name="list" id="regform-boolmailinglist"><option>Yes</option><option>No</option></select></div>
         </div> -->
         <div class="r">
+          <div>How did you come to know about Campus Ambassador Programme?</div>
+                    <div>
+            <select name="" id="regform-sourceselect" required>
+              <option value="" selected disabled hidden>
+                Choose from here
+              </option>
+              <option value="call/mail" >
+              I received a call/mail
+              </option>  
+               <option value="d2c" >
+                D2C
+              </option>  
+               <option value="intershala" >
+              Internshala
+              </option>  
+               <option value="linkedin" >
+            Linkedin
+              </option>  
+               <option value="apogeeWeb" >
+              APOGEE Website
+              </option>  
+               <option value="others" >
+               Others
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="r other-msg">
+          <div></div>
+          <div>
+            <input type="text" name="year" id="regform-other-source" placeholder="Kindly Enter the source here"/>
+          </div>
+        </div>
+        <div class="r">
           <p id="msg"></p>
         </div>
         <div class="r">
@@ -493,9 +527,17 @@ document.querySelectorAll(".mobile-menu li").forEach(i=>{
 });
 })
 
+document.getElementById("regform-sourceselect").onchange=()=>{
+if (document.getElementById("regform-sourceselect").value==="others") {
+  document.getElementsByClassName("other-msg")[0].style.display="flex";
+  document.getElementsByClassName("other-msg")[0].setAttribute('required',true);
+} else {
+  document.getElementsByClassName("other-msg")[0].style.display="none";
+  document.getElementsByClassName("other-msg")[0].setAttribute('required',false);
 
+}
 
-
+}
     function parseError(err) {
       msg.innerHTML = err;
       msg.className = "err";
