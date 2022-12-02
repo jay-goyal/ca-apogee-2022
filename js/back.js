@@ -87,27 +87,12 @@ function onSubmitRegister() {
     info_source: source,
   };
 
-  const cookieArray = document.cookie.split(";").map((cookie) => cookie.trim());
-  const cookieMap = cookieArray.reduce((all, cookie) => {
-    const [cookieName, value] = cookie.split("=");
-    return {
-      [cookieName]: value,
-      ...all,
-    };
-  }, {});
-  console.log(cookieMap);
+  document.cookie = "";
 
-  const postHeaders = {
-    "Content-Type": "application/json",
-  };
-
-  if ("csrftoken" in cookieMap) {
-    postHeaders["X-CSRF-Token"] = cookieMap["csrftoken"];
-  }
   fetch(registerUrl, {
     method: "POST",
     headers: {
-      ...postHeaders,
+      "Content-Type": "application/json",
     },
     redirect: "follow",
     body: JSON.stringify(requestObject),
@@ -129,7 +114,7 @@ function onSubmitRegister() {
       fetch(registerUrl1, {
         method: "POST",
         headers: {
-          ...postHeaders,
+          "Content-Type": "application/json",
         },
         redirect: "follow",
         body: JSON.stringify(requestObject),
