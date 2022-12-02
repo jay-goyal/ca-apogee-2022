@@ -101,7 +101,7 @@ function onSubmitRegister() {
     "Content-Type": "application/json",
   };
 
-  if ("csrftoken" in "js") {
+  if ("csrftoken" in cookieMap) {
     postHeaders["X-CSRF-Token"] = cookieMap["csrftoken"];
   }
   fetch(registerUrl, {
