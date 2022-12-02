@@ -59,8 +59,8 @@ function onSubmitRegister() {
   //var fieldOfStudy = document.getElementById('regform-fieldofstudy').value;
   var mobile = document.getElementById("regform-mobile").value;
   var source = document.getElementById("regform-sourceselect").value;
-  if (source==="others") {
-    source=document.getElementById("regform-other-source").value;
+  if (source === "others") {
+    source = document.getElementById("regform-other-source").value;
   }
 
   //var goodCand = document.getElementById('regform-goodcand').value;
@@ -84,13 +84,30 @@ function onSubmitRegister() {
     //list: hasMailingList,
     city: city,
     college: college,
-    info_source:source
+    info_source: source,
   };
 
+  const cookieArray = document.cookie.split(";").map((cookie) => cookie.trim());
+  const cookieMap = cookieArray.reduce((all, cookie) => {
+    const [cookieName, value] = cookie.split("=");
+    return {
+      [cookieName]: value,
+      ...all,
+    };
+  }, {});
+  console.log(cookieMap);
+
+  const postHeaders = {
+    "Content-Type": "application/json",
+  };
+
+  if ("csrftoken" in "js") {
+    postHeaders["X-CSRF-Token"] = cookieMap["csrftoken"];
+  }
   fetch(registerUrl, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      ...postHeaders,
     },
     redirect: "follow",
     body: JSON.stringify(requestObject),
@@ -112,7 +129,7 @@ function onSubmitRegister() {
       fetch(registerUrl1, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          ...postHeaders,
         },
         redirect: "follow",
         body: JSON.stringify(requestObject),
